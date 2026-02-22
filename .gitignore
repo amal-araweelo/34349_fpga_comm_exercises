@@ -1,0 +1,5 @@
+#ignore vhdl prj
+ex1_fcs/
+
+#ignore work dir
+work/
