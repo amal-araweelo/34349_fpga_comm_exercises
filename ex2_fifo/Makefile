@@ -10,12 +10,7 @@ RTL = rtl
 TB = tb
 
 SV_FILES = \
-	$(TB)/src/fcs_if.sv \
-	$(TB)/src/fcs_pkg.sv \
-	$(RTL)/fcs_serial_check.sv \
-	$(TB)/tb_fcs_serial_check.sv \
-	$(RTL)/fcs_parallel_check.sv \
-	$(TB)/tb_fcs_parallel_check.sv
+
 
 
 TOP = tb_fcs_serial_check

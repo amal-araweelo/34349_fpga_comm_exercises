@@ -1,0 +1,44 @@
+// -----------------------------
+// Auto-generated CRC equations
+// -----------------------------
+
+crc_r[0] <= crc_r[24] ^ crc_r[30] ^ data_in[7];
+crc_r[1] <= crc_r[24] ^ crc_r[25] ^ crc_r[30] ^ crc_r[31] ^ data_in[6];
+crc_r[2] <= crc_r[24] ^ crc_r[25] ^ crc_r[26] ^ crc_r[30] ^ crc_r[31] ^ data_in[5];
+crc_r[3] <= crc_r[25] ^ crc_r[26] ^ crc_r[27] ^ crc_r[31] ^ data_in[4];
+crc_r[4] <= crc_r[24] ^ crc_r[26] ^ crc_r[27] ^ crc_r[28] ^ crc_r[30] ^ data_in[3];
+crc_r[5] <= crc_r[24] ^ crc_r[25] ^ crc_r[27] ^ crc_r[28] ^ crc_r[29] ^ crc_r[30] ^ crc_r[31] ^ data_in[2];
+crc_r[6] <= crc_r[25] ^ crc_r[26] ^ crc_r[28] ^ crc_r[29] ^ crc_r[30] ^ crc_r[31] ^ data_in[1];
+crc_r[7] <= crc_r[24] ^ crc_r[26] ^ crc_r[27] ^ crc_r[29] ^ crc_r[31] ^ data_in[0];
+crc_r[8] <= crc_r[0] ^ crc_r[24] ^ crc_r[25] ^ crc_r[27] ^ crc_r[28];
+crc_r[9] <= crc_r[1] ^ crc_r[25] ^ crc_r[26] ^ crc_r[28] ^ crc_r[29];
+crc_r[10] <= crc_r[2] ^ crc_r[24] ^ crc_r[26] ^ crc_r[27] ^ crc_r[29];
+crc_r[11] <= crc_r[3] ^ crc_r[24] ^ crc_r[25] ^ crc_r[27] ^ crc_r[28];
+crc_r[12] <= crc_r[4] ^ crc_r[24] ^ crc_r[25] ^ crc_r[26] ^ crc_r[28] ^ crc_r[29] ^ crc_r[30];
+crc_r[13] <= crc_r[5] ^ crc_r[25] ^ crc_r[26] ^ crc_r[27] ^ crc_r[29] ^ crc_r[30] ^ crc_r[31];
+crc_r[14] <= crc_r[6] ^ crc_r[26] ^ crc_r[27] ^ crc_r[28] ^ crc_r[30] ^ crc_r[31];
+crc_r[15] <= crc_r[7] ^ crc_r[27] ^ crc_r[28] ^ crc_r[29] ^ crc_r[31];
+crc_r[16] <= crc_r[8] ^ crc_r[24] ^ crc_r[28] ^ crc_r[29];
+crc_r[17] <= crc_r[9] ^ crc_r[25] ^ crc_r[29] ^ crc_r[30];
+crc_r[18] <= crc_r[10] ^ crc_r[26] ^ crc_r[30] ^ crc_r[31];
+crc_r[19] <= crc_r[11] ^ crc_r[27] ^ crc_r[31];
+crc_r[20] <= crc_r[12] ^ crc_r[28];
+crc_r[21] <= crc_r[13] ^ crc_r[29];
+crc_r[22] <= crc_r[14] ^ crc_r[24];
+crc_r[23] <= crc_r[15] ^ crc_r[24] ^ crc_r[25] ^ crc_r[30];
+crc_r[24] <= crc_r[16] ^ crc_r[25] ^ crc_r[26] ^ crc_r[31];
+crc_r[25] <= crc_r[17] ^ crc_r[26] ^ crc_r[27];
+crc_r[26] <= crc_r[18] ^ crc_r[24] ^ crc_r[27] ^ crc_r[28] ^ crc_r[30];
+crc_r[27] <= crc_r[19] ^ crc_r[25] ^ crc_r[28] ^ crc_r[29] ^ crc_r[31];
+crc_r[28] <= crc_r[20] ^ crc_r[26] ^ crc_r[29] ^ crc_r[30];
+crc_r[29] <= crc_r[21] ^ crc_r[27] ^ crc_r[30] ^ crc_r[31];
+crc_r[30] <= crc_r[22] ^ crc_r[28] ^ crc_r[31];
+crc_r[31] <= crc_r[23] ^ crc_r[29];
+data_in[0 ] <= data_in[0];
+data_in[1] <= data_in[1];
+data_in[2] <= data_in[2];
+data_in[3] <= data_in[3];
+data_in[4] <= data_in[4];
+data_in[5] <= data_in[5];
+data_in[6] <= data_in[6];
+data_in[7] <= data_in[7];

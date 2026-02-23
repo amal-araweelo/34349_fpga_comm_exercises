@@ -1,11 +1,13 @@
-interface fcs_if (
+interface fcs_if #(
+  parameter int DATA_WIDTH = 8)
+  (
     input logic clk
   );
 
   logic reset;
   logic start_of_frame;
   logic end_of_frame;
-  logic data_in;
+  logic [DATA_WIDTH-1:0] data_in;
   logic fcs_error;
 
 
