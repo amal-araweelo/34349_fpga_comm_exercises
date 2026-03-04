@@ -53,7 +53,7 @@ module fcs_serial_check (
 
       // End of frame
       if (end_of_frame) begin
-        fcs_bit_cntr <= fcs_bit_cntr - 'd1;
+        fcs_bit_cntr <= fcs_bit_cntr - 7'd1;
       end
 
       // Generator polynomial: x^26 + x^23 + x^22 + x^16 + x^12 + x^11 + x^10 + x^8 + x^7 + x^5 + x^4 + x^2 + x + 1
@@ -92,22 +92,22 @@ module fcs_serial_check (
         crc_r[0]  <= fb;
 
         // Decrement start bit counter only when we are in the payload part of the frame
-        if (start_cntr < 'd32 && start_cntr != 'd0) start_cntr <= start_cntr - 'd1;
-        else if (start_cntr == 'd1) start_cntr <= 'd0; // keep at 0
+        if (start_cntr < 7'd32 && start_cntr != 7'd0) start_cntr <= start_cntr - 7'd1;
+        else if (start_cntr == 7'd1) start_cntr <= 7'd0; // keep at 0
 
         // Decrement FCS bit counter only when we are in the FCS part of the frame
-        if (fcs_bit_cntr < 'd32) fcs_bit_cntr <= fcs_bit_cntr - 'd1;
-        else if (fcs_bit_cntr == 'd1) fcs_bit_cntr <= 'd0;
+        if (fcs_bit_cntr < 7'd32) fcs_bit_cntr <= fcs_bit_cntr - 7'd1;
+        else if (fcs_bit_cntr == 7'd1) fcs_bit_cntr <= 7'd0;
 
         // Check for FCS error at the end of frame
-        if (fcs_bit_cntr == 'd0) begin
-          fcs_error_r <= (crc_r == 32'h0000_0000) ? 'b0: 'b1;
-          in_frame <='b0;
+        if (fcs_bit_cntr == 7'd0) begin
+          fcs_error_r <= (crc_r == 32'h0000_0000) ? 1'b0: 1'b1;
+          in_frame <=1'b0;
 
           // prepare for next frame
-          crc_r <= '0;
-          start_cntr   <= 'd32;
-          fcs_bit_cntr <= 'd32;
+          crc_r <= 32'b0;
+          start_cntr   <= 7'd32;
+          fcs_bit_cntr <= 7'd32;
         end
       end
     end

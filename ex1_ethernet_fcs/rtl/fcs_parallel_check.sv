@@ -52,7 +52,7 @@ module fcs_parallel_check (
       end
 
       if (end_of_frame)
-        fcs_byte_cntr <= fcs_byte_cntr - 1;
+        fcs_byte_cntr <= fcs_byte_cntr - 4'd1;
 
       if (start_of_frame || in_frame) begin // while processing frame
 
@@ -92,10 +92,10 @@ module fcs_parallel_check (
 
         // Decrement start and FCS byte counters 
         if (start_cntr < 4 && start_cntr != 0) // when processing first 4 payload bytes
-          start_cntr <= start_cntr - 1;
+          start_cntr <= start_cntr - 4'd1;
 
         if (fcs_byte_cntr < 4)  // when processing 4 FCS bytes
-          fcs_byte_cntr <= fcs_byte_cntr - 1;
+          fcs_byte_cntr <= fcs_byte_cntr - 4'd1;
 
         if (fcs_byte_cntr == 0) begin // after processing all 4 FCS bytes, check if crc is correct and pulse fcs_error if not
           fcs_error_r <= (crc_r == 32'h0000_0000) ? 1'b0 : 1'b1;

@@ -40,5 +40,6 @@ clean:
 	@if exist work rmdir /s /q work
 	@if exist transcript del /q transcript
 	@if exist vsim.wlf del /q vsim.wlf
+	@if exist vsim_stacktrace.vstf del /q vsim_stacktrace.vstf
 	@if exist wlf* del /q wlf*
 	@if exist modelsim.ini del /q modelsim.ini

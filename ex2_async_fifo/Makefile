@@ -10,10 +10,13 @@ RTL = rtl
 TB = tb
 
 SV_FILES = \
+	$(RTL)/submodules/bin2gray.sv \
+	$(RTL)/submodules/gray2bin.sv \
+	$(RTL)/submodules/fifo_ram.v \
+	$(RTL)/async_fifo.sv \
 
 
-
-TOP = tb_fcs_serial_check
+TOP = async_fifo
 
 all: compile
 
