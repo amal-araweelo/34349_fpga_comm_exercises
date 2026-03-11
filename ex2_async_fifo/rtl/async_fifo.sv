@@ -46,16 +46,16 @@ fifo_ram u_dual_port_ram (
         .q         (read_data_out)
     );
 
-
+logic [4:0] wptr_next;
+assign wptr_next = wptr + 1;
 // Write domain
 always_ff @(posedge wclk) begin
-    if (!reset) begin
-        wptr <= 5'b0;
-    end else if (write_en && !full) begin // increment write pointer and address
-        wptr <= wptr + 5'd1;
-    end
+    if (!reset)
+        wptr <= 0;
+    else if (write_en && !full)
+        wptr <= wptr_next;
 end
-assign waddr = wptr[3:0]; // address is the lower 4 bits of the pointer
+assign waddr = wptr[3:0];
 
 // Read domain
 always_ff @(posedge rclk) begin
